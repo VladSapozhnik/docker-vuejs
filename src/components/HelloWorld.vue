@@ -9,7 +9,6 @@
         <div class="stack__wrapper-btn" @click="infoItem">Проверить магазин</div>
         <div class="stack__wrapper-btn" @click="pushItem">Зарядить</div>
         <div class="stack__wrapper-btn" @click="popItem">Нажать на курок</div>
-        <div class="stack__wrapper-btn" @click="swapItem">Сменить магазин</div>
       </div>
       <div class="stack__action">{{action}}</div>
     </div>
@@ -28,17 +27,10 @@ export default {
       patron: 0,
       action: '',
       check: '',
-      fullItem: [30, 29, 28, 27, 26],
+      thing: []
     }
   },
   methods: {
-    swapItem:function () {
-      this.stack = this.fullItem;
-      console.log(this.stack)
-      this.stack.pop();
-      this.fullItem++;
-      this.action = 'Зарядил';
-    },
     pushItem:function () {
         if (this.stack.length < 30) {
           this.stack.push(this.item + this.patron);
@@ -52,6 +44,8 @@ export default {
           this.stack.pop();
           this.patron--;
           this.action = 'Выстрел';
+          this.thing = this.stack[Math.floor(Math.random()*this.stack.length)];
+          console.log(this.thing);
       } else {
         this.patron == 0; 
         this.action = 'Выстрел невозможен магазин пуст!'; 

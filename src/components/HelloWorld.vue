@@ -43,7 +43,7 @@ export default {
       if (this.stack.length > 0) { 
           this.stack.pop();
           this.patron--;
-          this.action = ' выстрел!';
+          this.action = ' выстрел! ';
           if (this.patron == 2) {
             this.statusPatron = 'Холостой'
           } else if (this.patron == 5) {

@@ -4,13 +4,13 @@
       <h1>Stack - обойма</h1>
       <div class="stack__logo"></div>
       <div class="stack__patron" >Патронов заряжено: {{patron}}</div>
-      <div class="stack__check">{{check}}</div>
       <div class="stack__wrapper">
-        <div class="stack__wrapper-btn" @click="infoItem">Проверить магазин</div>
         <div class="stack__wrapper-btn" @click="pushItem">Зарядить</div>
         <div class="stack__wrapper-btn" @click="popItem">Нажать на курок</div>
+        <div class="stack__wrapper-btn" @click="infoItem">Проверить магазин</div>
       </div>
       <div class="stack__action">{{statusPatron}}{{action}}</div>
+      <div class="stack__check">{{check}}</div>
     </div>
   </div>
 </template>
@@ -86,7 +86,6 @@ export default {
   },
 };
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .container {
   max-width: 920px;
@@ -128,6 +127,7 @@ export default {
     font-size: 28px;
     text-align: center;
     margin-bottom: 30px;
+    color: rgb(46, 161, 98);
   }
   &__action {
     font-size: 28px;

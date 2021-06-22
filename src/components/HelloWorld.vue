@@ -10,7 +10,7 @@
         <div class="stack__wrapper-btn" @click="pushItem">Зарядить</div>
         <div class="stack__wrapper-btn" @click="popItem">Нажать на курок</div>
       </div>
-      <div class="stack__action">{{action}}</div>
+      <div class="stack__action">{{statusPatron}}{{action}}</div>
     </div>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
       patron: 0,
       action: '',
       check: '',
-      thing: []
+      statusPatron: ''
     }
   },
   methods: {
@@ -43,12 +43,28 @@ export default {
       if (this.stack.length > 0) { 
           this.stack.pop();
           this.patron--;
-          this.action = 'Выстрел';
-          this.thing = this.stack[Math.floor(Math.random()*this.stack.length)];
-          console.log(this.thing);
+          this.action = ' выстрел!';
+          if (this.patron == 2) {
+            this.statusPatron = 'Холостой'
+          } else if (this.patron == 5) {
+            this.statusPatron = 'Холостой'
+          } else if (this.patron == 8) {
+            this.statusPatron = 'Холостой'
+          } else if (this.patron == 12) {
+            this.statusPatron = 'Холостой'
+          } else if (this.patron == 18) {
+            this.statusPatron = 'Холостой'
+          } else if (this.patron == 24) {
+            this.statusPatron = 'Холостой'
+          } else if (this.patron == 27) {
+            this.statusPatron = 'Холостой'
+          } else {
+            this.statusPatron = 'Успешный'
+          }
       } else {
         this.patron == 0; 
         this.action = 'Выстрел невозможен магазин пуст!'; 
+        this.statusPatron = '';
       }
     },
 

@@ -63,7 +63,7 @@ export default {
           }
       } else {
         this.patron == 0; 
-        this.action = 'Выстрел невозможен магазин пуст!'; 
+        this.action = 'Выстрел невозможен, магазин пуст!'; 
         this.statusPatron = '';
       }
     },

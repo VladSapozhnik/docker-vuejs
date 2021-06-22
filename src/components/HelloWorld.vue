@@ -11,6 +11,7 @@
       </div>
       <div class="stack__action">{{statusPatron}}{{action}}</div>
       <div class="stack__check">{{check}}</div>
+      <div class="toTop" @click="toTop">на верх</div>
     </div>
   </div>
 </template>
@@ -83,6 +84,14 @@ export default {
         this.check = 'Полный.'
       }
     },
+
+    toTop:function () {
+      window.scrollTo({
+        top: -500000,
+        left: 0,
+        behavior: "smooth"
+      })
+    }
   },
 };
 </script>
@@ -91,7 +100,8 @@ export default {
   max-width: 920px;
   margin: 0 auto;
   border: 1px solid #000;
-  padding: 100px 0;
+  border-top: none;
+  padding: 50px 0;
 }
 .stack {
   min-height: 800px;
@@ -133,6 +143,27 @@ export default {
     font-size: 28px;
     text-align: center;
     color: rgb(151, 53, 53);
+  }
+
+  .toTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    color: #fff;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgb(32, 167, 32);
+    position: relative;
+    padding-left: 15px;
+    &::before {
+      content: '▲';
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }
 </style>

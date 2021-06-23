@@ -1,22 +1,27 @@
 [
     {
         "title": "Патроны 5.45",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam."
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam.",
+        "submit": "Купить"
     },
     {
         "title": "Патроны 7.62",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam."
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam.",
+        "submit": "Купить"
     },
     {
         "title": "Патроны .45",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam."
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam.",
+        "submit": "Купить"
     },
     {
         "title": "Патроны 9х18",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam."
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam.",
+        "submit": "Купить"
     },
     {
         "title": "Патроны 9х39",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam."
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam.",
+        "submit": "Купить"
     }
 ]

@@ -1,19 +1,22 @@
 <template>
   <div id="app">
-    <Search />
-    <HelloWorld />
+    <SearchAmmo />
+    <tabs/>
+    <ToTop/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import Search from "./components/Search.vue";
+import tabs from "./components/Tabs.vue";
+import SearchAmmo from "./components/SearchAmmo.vue";
+import ToTop from "./components/ToTop.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
-    Search
+    SearchAmmo,
+    tabs,
+    ToTop
   }
 };
 </script>
@@ -25,6 +28,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 920px;
+  margin: 30px auto 0;
+}
+body {
+  padding: 0;
+  margin: 0;
 }
 </style>

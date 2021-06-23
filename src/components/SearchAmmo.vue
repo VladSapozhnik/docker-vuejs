@@ -1,15 +1,15 @@
 <template>
-  <div class="search">
+  <div class="search" @click="resetSearch">
     <div class="container">
       <div class="search__inner">
-        <input class="search__inner-input" v-model="searchValue" type="text" @click="putSearch" placeholder="Что вы ищите?">
-        <div class="search__inner-title">Оружие</div>
+        <input class="search__inner-input" v-model="searchValue" type="text" @click="putSearch" placeholder="Какие патроны вы ищите?">
+        <div class="search__inner-title">Ammu-Nation</div>
       </div>
       <ul class="search__list" v-for="item in sortSearchItem" :key="item.id">
           <li class="search__item">
               <div class="search__item-title">{{item.title}}</div>
               <div class="search__item-text">{{item.text}}</div>
-              <div>{{resultSearch}}</div>
+              <div class="search__item-btn">{{item.submit}}</div>
           </li>
       </ul>
     </div>
@@ -17,12 +17,12 @@
 </template>
 <script>
 export default {
-  name: "Search",
+  name: "SearchAmmo",
   data: function () {
       return {
           searchData: [],
           searchValue: '',
-          resultSearch: ''
+          basketSearch: []
       };
   },
   computed: {
@@ -37,23 +37,18 @@ export default {
         this.axios.get("./static/search.json")
         .then((response) => {
             this.searchData = response.data;
-            console.log(this.searchData)
         });
+    },
+    resetSearch: function() {
+      this.searchData = []
     },
   },
 };
 </script>
 <style scoped lang="scss">
-.container {
-  max-width: 920px;
-  margin: 0 auto;
-  border: 1px solid #000;
-  border-bottom: none;
-  padding: 50px 0;
-}
-
 .search {
-    .search__inner {
+  margin-bottom: 50px;
+    &__inner {
         display: flex;
         justify-content: space-around;
         &-input {
@@ -68,6 +63,16 @@ export default {
         &-title {
             font-size: 30px;
             font-weight: bold;
+            color: #D6A74B;
+            position: relative;
+            padding-left: 35px;
+            &::before {
+              content: '★';
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+            }
         }
     }
     
@@ -87,9 +92,34 @@ export default {
             font-size: 20px;
             font-weight: bold;
             flex-shrink: 0;
+            margin-right: 10px;
         }
         &-text {
             font-size: 16px;
+        }
+
+        &-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100px;
+          height: 50px;
+          color: #fff;
+          margin: 0 auto;
+          border-radius: 10px;
+          background-color: rgb(0, 0, 0);
+          position: relative;
+          padding-left: 15px;
+          cursor: pointer;
+          flex-shrink: 0;
+          margin-left: 10px;
+          &::before {
+            content: '▲';
+            position: absolute;
+            left: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
         }
     }   
 }

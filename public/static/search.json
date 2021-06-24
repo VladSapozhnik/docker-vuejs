@@ -1,27 +1,37 @@
 [
     {
+        "id": 1,
         "title": "Патроны 5.45",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam.",
-        "submit": "Купить"
+        "price": "600",
+        "numProduct": 0
     },
     {
+        "id": 2,
         "title": "Патроны 7.62",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam.",
-        "submit": "Купить"
+        "price": 1170,
+        "numProduct": 0
     },
     {
+        "id": 3,
         "title": "Патроны .45",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam.",
-        "submit": "Купить"
+        "price": 445,
+        "numProduct": 0
     },
-    {
+    {   
+        "id": 4,
         "title": "Патроны 9х18",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam.",
-        "submit": "Купить"
+        "price": 220,
+        "numProduct": 0
     },
-    {
+    {   
+        "id": 5,
         "title": "Патроны 9х39",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eaque quaerat placeat esse nemo pariatur, iste, nobis, tempora nostrum at quisquam? Magni tenetur ad totam.",
-        "submit": "Купить"
+        "price": 1330,
+        "numProduct": 0
     }
 ]

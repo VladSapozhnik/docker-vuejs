@@ -51,6 +51,7 @@ export default {
         color: #fff;
         border-radius:1px;
         background-color: #000;
+        cursor: pointer;
         & + & {
             margin-left: 5px;
         }

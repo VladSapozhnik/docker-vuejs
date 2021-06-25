@@ -6,10 +6,12 @@
         <div class="search__inner-title" >Ammu-Nation</div>
         <div class="total">
           <h3 class="search__total" :class="{ ammoNull }" @click="openCar(ammoPrice)"> Total : &euro;{{ammoPrice}} </h3>
+          <div class="search__total-empty" v-if="ammoNull == true">Корзина пустая</div>
           <div v-if="openPopup == true">
             <div class="popup">
               <h3>Ammu-Nation</h3>
                 <form class="popup__wrapper" @submit.prevent="submit">
+                  
                   <div class="form__item form-group" :class="{ 'form-group--error': $v.formAmmo.name.value.$error }">
                     <input class="popup__wrapper-data" v-model="formAmmo.name.value" type="name" :placeholder="formAmmo.name.placeholder"/>
                     <div class="error" v-if="!$v.formAmmo.name.value.required && $v.formAmmo.name.value.$dirty">
@@ -48,6 +50,7 @@
                       Введите корректный Email
                     </div>
                   </div>
+
                   <div class="form__inner">
                     <p class="form__info form__info-valid" v-if="submitStatus === 'OK'">Спасибо за заявку!</p>
                     <p class="form__info form__info-error" v-if="submitStatus === 'ERROR'">Пожалуйста, заполните форму правильно.</p>
@@ -169,12 +172,12 @@ export default {
       if (this.$v.$invalid) {
         this.submitStatus = 'ERROR'
       } else {
-        // do your submit logic here
         this.submitStatus = 'PENDING'
         setTimeout(() => {
           this.submitStatus = 'OK'
           this.axios
-            .post("/request", "общая цена: "+this.ammoPrice, this.formAmmo)
+            .post("/request", [this.formAmmo, "Общая цена "+this.ammoPrice, this.sortSearchItem])
+            console.log('успешно!')
             .then(function (response) {
               console.log(response)
             })
@@ -277,11 +280,23 @@ export default {
       padding: 10px 20px;
       border-radius: 5px;
     }
+    .total {
+      position: relative;
+    }
     &__total {
       border: 1px solid #000;
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
+      &-empty {
+        position: absolute;
+        bottom: 0px;
+        font-size: 9px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        color: red;
+      }
     }
     &__inner {
         display: flex;

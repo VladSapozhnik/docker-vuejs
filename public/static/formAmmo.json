@@ -1,0 +1,20 @@
+{
+    "name":{
+        "placeholder":"Введите имя",
+        "value": ""
+    },
+
+    "surname":{
+        "placeholder":"Введите фамилию",
+        "value": ""
+    },
+
+    "tel":{
+        "placeholder": "Введите Телефон Украины",
+        "value": ""
+    },
+    "email":{
+        "placeholder": "Введите Email",
+        "value": ""
+    }
+}

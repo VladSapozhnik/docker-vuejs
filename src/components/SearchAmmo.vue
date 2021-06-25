@@ -5,7 +5,7 @@
         <input class="search__inner-input" v-model="searchValue" type="text" @click="putSearch" placeholder="Какие патроны вы ищите?">
         <div class="search__inner-title" >Ammu-Nation</div>
         <div class="total">
-          <h3 class="search__total" :class="{ ammoNull }" @click="openCar(ammoPrice)"> Total : &euro;{{ammoPrice}} </h3>
+          <h3 class="search__total" :class="{ ammoNull }" @click="openCar(ammoPrice)"> Total : &euro;{{ammoPrice}} <div class="search__total-buy">Купить</div></h3>
           <div class="search__total-empty" v-if="ammoNull == true">Корзина пустая</div>
           <div v-if="openPopup == true">
             <div class="popup">
@@ -285,9 +285,18 @@ export default {
     }
     &__total {
       border: 1px solid #000;
-      padding: 10px 20px;
+      padding: 10px 20px 15px;
       border-radius: 5px;
       cursor: pointer;
+      position: relative;
+      &-buy {
+        position: absolute;
+        font-size: 9px;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-transform: uppercase;
+      }
       &-empty {
         position: absolute;
         bottom: 0px;
@@ -296,6 +305,7 @@ export default {
         transform: translateX(-50%);
         white-space: nowrap;
         color: red;
+        text-transform: uppercase;
       }
     }
     &__inner {

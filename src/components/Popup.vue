@@ -7,9 +7,7 @@
                    <a :href="menu.href">{{menu.title}}</a>
                    <ul>
                        <li v-for="item in menu.item" :key="item.id">
-                           <a :href="item.href">
-                               {{item.title}}
-                            </a>
+                           <a :href="item.href">{{item.title}}</a>
                             <ul>
                                 <li v-for="result in item.result" :key="result.id">
                                     <a>{{result.title}}</a>
@@ -43,7 +41,7 @@ export default {
     return {
         pending: true,
         popupHead: '',
-        menuData: {}
+        menuData: {},
     };
   },
   created: function () {
@@ -75,6 +73,7 @@ export default {
         padding: 0 0 15px;
         text-align: left;
         font-size: 15px;
+        cursor: pointer;
     }
     a {
         color: #000;

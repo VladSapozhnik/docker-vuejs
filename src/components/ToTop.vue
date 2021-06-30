@@ -1,27 +1,26 @@
 <template>
-    <div class="container">
-      <div class="toTop" @click="toTop">на верх</div>
-    </div>
+  <div class="container">
+    <div class="toTop" @click="toTop">на верх</div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "HelloWorld",
   props: {
-    msg: String
+    msg: String,
   },
   data: function () {
-    return {
-    }
+    return {};
   },
   methods: {
-    toTop:function () {
+    toTop: function () {
       window.scrollTo({
         top: -500000,
         left: 0,
-        behavior: "smooth"
-      })
-    }
+        behavior: "smooth",
+      });
+    },
   },
 };
 </script>
@@ -40,12 +39,11 @@ export default {
   padding-left: 15px;
   cursor: pointer;
   &::before {
-    content: '▲';
+    content: "▲";
     position: absolute;
     left: 13px;
     top: 50%;
     transform: translateY(-50%);
   }
 }
-
 </style>

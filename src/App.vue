@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <SearchAmmo />
-    <tabs/>
+    <SearchAmmo/>
+    <tabs />
     <ToTop/>
+    <Popup>
+      <h1>hi</h1>
+      <p>hi</p>
+    </Popup>
   </div>
 </template>
 
@@ -10,14 +14,16 @@
 import tabs from "./components/Tabs.vue";
 import SearchAmmo from "./components/SearchAmmo.vue";
 import ToTop from "./components/ToTop.vue";
+import Popup from "./components/Popup.vue";
 
 export default {
   name: "App",
   components: {
     SearchAmmo,
     tabs,
-    ToTop
-  }
+    ToTop,
+    Popup
+  },
 };
 </script>
 

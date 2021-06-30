@@ -381,6 +381,10 @@ export default {
           cursor: pointer;
           flex-shrink: 0;
           margin-left: 10px;
+          &:active {
+            color: #fff;
+            background-color: #000;
+          }
         }
     }   
 }

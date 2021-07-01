@@ -1,22 +1,23 @@
 <template>
   <div class="popup" >
     <div class="container">
-        <div v-if="!pending">
+        <div class="menu" v-if="!pending">
             <ul>
-               <li v-for="menu in menuData.list" :key="menu.id">
-                   <a v-if="hrefItem == ''" @click="menuItem(menu.href)">{{menu.title}}</a>
-                   <a v-if="hrefItem != '' && menu.href == hrefItem">{{menu.stepBack}}</a>
-                   <ul>
-                        <li v-for="item in menu.item" :key="item.id">
-                           <a v-if="menu.href == hrefItem" @click="menuItem(item.href)">{{item.title}}</a>
-                           <a v-if="hrefItem != '' && item.href == hrefItem">{{menu.stepBack}}</a>
-                            <ul v-if="item.href == hrefItem">
-                                <li v-for="result in item.result" :key="result.id">
-                                    <a>{{result.title}}</a>
-                                </li>
-                            </ul>
-                        </li>
-                   </ul>
+                <div v-if="hrefItem == ''" class="menu-title">Главная</div>
+                <li v-for="menu in menuData.list" :key="menu.id"> 
+                    <a v-if="hrefItem == ''" @click="nextStep(menu.href)">{{menu.title}}</a>
+                    <a v-if="hrefItem != '' && menu.href == hrefItem" @click="hrefItem = ''" class="step-back">{{menu.stepBack}}</a>
+                    <ul>
+                         <li v-for="item in menu.item" :key="item.id">
+                            <a v-if="menu.href == hrefItem" @click="nextStep(item.href)">{{item.title}}</a>
+                            <a v-if="hrefItem != '' && item.href == hrefItem" @click="backStep(menu.href)" class="step-back">{{menu.stepBack}}</a>
+                             <ul v-if="item.href == hrefItem">
+                                 <li v-for="result in item.result" :key="result.id">
+                                     <a>{{result.title}}</a>
+                                 </li>
+                             </ul>
+                         </li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -42,7 +43,6 @@ export default {
   data: function () {
     return {
         pending: true,
-        popupHead: '',
         menuData: {},
         hrefItem: ''
     };
@@ -51,15 +51,14 @@ export default {
     this.axios.get("./static/menu.json").then((response) => {
         this.menuData = response.data;
         this.pending = false;
-        console.log(this.menuData);
     });
   },
   methods: {
-    menuItem: function (info) {
-        console.log(info)
+    nextStep: function (info) {
         this.hrefItem = info
-        console.log(info)
-        console.log(this.hrefItem)
+    },
+    backStep: function (stepBack) {
+        this.hrefItem = stepBack 
     }
   }
 };
@@ -91,9 +90,39 @@ export default {
         color: #000;
         text-decoration: none;
         text-align: left;
-        padding: 0;
-        height: 30px;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-title {
+        padding: 5px 10px;
+        border: 1px solid green;
         display: block;
+        width: 140px;
+        margin-bottom: 5px;
+    }
+
+    a.step-back {
+        border: 1px solid green;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        margin-bottom: 5px;
+        &:hover {
+            background-color: green;
+            color: #fff;
+        }
+    }
+
+    .menu {
+        width: 50%;
+        li a {
+            border-bottom: 1px solid green;
+            padding-left: 10px;
+        }
     }
 }
 </style>

@@ -3,12 +3,10 @@
         {
             "title": "Услуги",
             "href": "service",
-            "stepBack": "Назад",
             "item": [
                 {
                     "title": "Услуги, услуга доставки, item 1",
                     "href": "service-item",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Услуги, результат один"
@@ -17,14 +15,13 @@
                             "title": "Услуги, результат два"
                         },
                         {
-                            "title": "Услуги, результат один 3"
+                            "title": "Услуги, результат три"
                         }
                     ]
                 },
                 {
                     "title": "Услуги, услуга вывоза, item 2",
                     "href": "service-item2",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Услуги, результат один 2.1"
@@ -40,7 +37,6 @@
                 {
                     "title": "Услуги, услуга хз, item 3",
                     "href": "service-item3",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Услуги, результат один 3.1"
@@ -58,12 +54,10 @@
         {
             "title": "Новости",
             "href": "news",
-            "stepBack": "Назад",
             "item": [
                 {
                     "title": "Hello, list 2, item 1",
                     "href": "news-item1",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Новости, результат один 1"
@@ -82,7 +76,6 @@
                 {
                     "title": "Hello 2, list 2, item 2",
                     "href": "news-item2",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Новости, результат один 2.1"
@@ -103,12 +96,10 @@
         {
             "title": "Обучение",
             "href": "training",
-            "stepBack": "Назад",
             "item": [
                 {
                     "title": "Hello 3, list 1, item 1",
                     "href": "training-item1",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Обучение, результат один 1 "
@@ -127,7 +118,6 @@
                 {
                     "title": "Hello 3, list 1, item 2",
                     "href": "training-item2",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Обучение, результат один 2.1 "
@@ -137,7 +127,6 @@
                 {
                     "title": "Hello 3, list 1, item 3",
                     "href": "training-item3",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Обучение, результат один 3.1"
@@ -153,7 +142,6 @@
                 {
                     "title": "Hello 3, list 1, item 4",
                     "href": "training-item4",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Обучение, результат один 4.1"
@@ -168,12 +156,10 @@
         {
             "title": "Контакты",
             "href": "contacts",
-            "stepBack": "Назад",
             "item": [
                 {
                     "title": "Hello 3, list 1, item 1",
                     "href": "contacts-item1",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Контакты, результат один 1 "
@@ -186,7 +172,6 @@
                 {
                     "title": "Hello 3, list 1, item 2",
                     "href": "contacts-item2",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Контакты, результат один 2.1 "
@@ -202,7 +187,6 @@
                 {
                     "title": "Hello 3, list 1, item 3",
                     "href": "contacts-item3",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Контакты, результат один 3.1"
@@ -218,7 +202,6 @@
                 {
                     "title": "Hello 3, list 1, item 4",
                     "href": "contacts-item4",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Контакты, результат один 4.1"
@@ -240,7 +223,6 @@
                 {
                     "title": "Hello 3, list 1, item 3",
                     "href": "contacts-item5",
-                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Контакты, результат один 5.1"

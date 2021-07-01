@@ -6,17 +6,17 @@
                 <div v-if="hrefItem == ''" class="menu-title">Главная</div>
                 <li v-for="menu in menuData.list" :key="menu.id"> 
                     <a v-if="hrefItem == ''" @click="nextStep(menu.href)">{{menu.title}}</a>
-                    <a v-if="hrefItem != '' && menu.href == hrefItem" @click="hrefItem = ''" class="step-back">{{menu.stepBack}}</a>
+                    <a v-if="hrefItem != '' && menu.href == hrefItem" @click="hrefItem = ''" class="step-back">Назад</a>
                     <ul>
-                         <li v-for="item in menu.item" :key="item.id">
+                        <li v-for="item in menu.item" :key="item.id">
                             <a v-if="menu.href == hrefItem" @click="nextStep(item.href)">{{item.title}}</a>
                             <a v-if="hrefItem != '' && item.href == hrefItem" @click="backStep(menu.href)" class="step-back">{{menu.stepBack}}</a>
-                             <ul v-if="item.href == hrefItem">
-                                 <li v-for="result in item.result" :key="result.id">
-                                     <a>{{result.title}}</a>
-                                 </li>
-                             </ul>
-                         </li>
+                            <ul v-if="item.href == hrefItem">
+                                <li v-for="result in item.result" :key="result.id">
+                                    <a>{{result.title}}</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -54,11 +54,11 @@ export default {
     });
   },
   methods: {
-    nextStep: function (info) {
-        this.hrefItem = info
+    nextStep: function (next) {
+        this.hrefItem = next
     },
-    backStep: function (stepBack) {
-        this.hrefItem = stepBack 
+    backStep: function (back) {
+        this.hrefItem = back 
     }
   }
 };

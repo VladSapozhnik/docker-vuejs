@@ -2,13 +2,15 @@
   <div class="popup" >
     <div class="container">
         <div v-if="!pending">
-           <ul>
+            <ul>
                <li v-for="menu in menuData.list" :key="menu.id">
-                   <a :href="menu.href">{{menu.title}}</a>
+                   <a v-if="hrefItem == ''" @click="menuItem(menu.href)">{{menu.title}}</a>
+                   <a v-if="hrefItem != '' && menu.href == hrefItem">{{menu.stepBack}}</a>
                    <ul>
-                       <li v-for="item in menu.item" :key="item.id">
-                           <a :href="item.href">{{item.title}}</a>
-                            <ul>
+                        <li v-for="item in menu.item" :key="item.id">
+                           <a v-if="menu.href == hrefItem" @click="menuItem(item.href)">{{item.title}}</a>
+                           <a v-if="hrefItem != '' && item.href == hrefItem">{{menu.stepBack}}</a>
+                            <ul v-if="item.href == hrefItem">
                                 <li v-for="result in item.result" :key="result.id">
                                     <a>{{result.title}}</a>
                                 </li>
@@ -16,7 +18,7 @@
                         </li>
                    </ul>
                 </li>
-           </ul>
+            </ul>
         </div>
         <slot></slot>
         <div class="popup__head">Услуги</div>    
@@ -42,6 +44,7 @@ export default {
         pending: true,
         popupHead: '',
         menuData: {},
+        hrefItem: ''
     };
   },
   created: function () {
@@ -50,6 +53,14 @@ export default {
         this.pending = false;
         console.log(this.menuData);
     });
+  },
+  methods: {
+    menuItem: function (info) {
+        console.log(info)
+        this.hrefItem = info
+        console.log(info)
+        console.log(this.hrefItem)
+    }
   }
 };
 </script>
@@ -66,11 +77,12 @@ export default {
     }
     ul {
         list-style-type: none;
-        padding: 0 0 16px 16px;
+        padding: 0;
         margin: 0;
     }
     li {
-        padding: 0 0 15px;
+        padding: 0;
+        margin: 0;
         text-align: left;
         font-size: 15px;
         cursor: pointer;

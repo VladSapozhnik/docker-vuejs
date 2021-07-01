@@ -1,12 +1,14 @@
 {   
     "list": [
         {
-            "title": "Hello, list 1",
+            "title": "Услуги",
             "href": "item1",
+            "stepBack": "Назад",
             "item": [
                 {
                     "title": "Hello, list 1, item 1",
                     "href": "item1-result1",
+                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Hello, list 1, item 1 result"
@@ -20,23 +22,25 @@
                     ]
                 },
                 {
-                    "title": "Hello 2, list 1, item 2",
+                    "title": "Hello 1, list 1, item 2",
                     "href": "item1-result2",
+                    "stepBack": "Назад",
                     "result": [
                         {
-                            "title": "Hello 2, list 1, item 2 result 1"
+                            "title": "Hello 1, list 1, item 2 result 1"
                         },
                         {
-                            "title": "Hello 2, list 1, item 2 result 2"
+                            "title": "Hello 1, list 1, item 2 result 2"
                         },
                         {
-                            "title": "Hello 2, list 1, item 2 result 3"
+                            "title": "Hello 1, list 1, item 2 result 3"
                         }
                     ]
                 },
                 {
                     "title": "Hello 3, list 1, item 3",
                     "href": "item1-result3",
+                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Hello, list 1, item 3 result 1"
@@ -52,12 +56,14 @@
             ]
         },
         {
-            "title": "Hello 2, list 1",
+            "title": "Новости",
             "href": "item2",
+            "stepBack": "Назад",
             "item": [
                 {
                     "title": "Hello, list 2, item 1",
                     "href": "item2-result1",
+                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Hello, list 1, item 1, result 1"
@@ -76,6 +82,7 @@
                 {
                     "title": "Hello 2, list 2, item 2",
                     "href": "item2-result2",
+                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Hello, list 1, item 2, result 1"
@@ -94,12 +101,14 @@
             ]
         },
         {
-            "title": "Hello 3, list 1",
+            "title": "Обучение",
             "href": "item3",
+            "stepBack": "Назад",
             "item": [
                 {
                     "title": "Hello 3, list 1, item 1",
                     "href": "item3-result1",
+                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Hello 3, list 1, item 1, result "
@@ -118,6 +127,7 @@
                 {
                     "title": "Hello 3, list 1, item 2",
                     "href": "item3-result2",
+                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Hello 3, list 1, item 2, result "
@@ -127,6 +137,7 @@
                 {
                     "title": "Hello 3, list 1, item 3",
                     "href": "item3-result3",
+                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Hello 3, list 1, item 3, result "
@@ -142,6 +153,7 @@
                 {
                     "title": "Hello 3, list 1, item 4",
                     "href": "item3-result4",
+                    "stepBack": "Назад",
                     "result": [
                         {
                             "title": "Hello 3, list 1, item 4, result "
@@ -153,146 +165,5 @@
                 }
             ]
         }
-    ],
-
-    "list2": [
-        {
-            "title": "Hello, list 2",
-            "item": [
-                {
-                    "title": "Hello, list 2, item"
-                },
-                {
-                    "title": "Hello, list 2, item 2"
-                },
-                {
-                    "title": "Hello, list 2, item 3"
-                }
-            ]
-        },
-        {
-            "title": "Hello 2, list 2",
-            "item": [
-                {
-                    "title": "Hello 2, list 2, item",
-                    "result": [
-                        {
-                            "title": "Hello 2, list 2, item, result 1"
-                        },
-                        {
-                            "title": "Hello 2, list 2, item, result 2"
-                        }
-                    ]
-                },
-                {
-                    "title": "Hello 2, list 2, item 2",
-                    "result": [
-                        {
-                            "title": "Hello 2, list 2, item 2, result 1"
-                        },
-                        {
-                            "title": "Hello 2, list 2, item 2, result 2"
-                        },
-                        {
-                            "title": "Hello 2, list 2, item 2, result 3"
-                        }
-                    ]
-                },
-                {
-                    "title": "Hello 2, list 2, item 3",
-                    "result": [
-                        {
-                            "title": "Hello 2, list 2, item 3, result 1"
-                        },
-                        {
-                            "title": "Hello 2, list 2, item 3, result 2"
-                        },
-                        {
-                            "title": "Hello 2, list 2, item 3, result 3"
-                        },
-                        {
-                            "title": "Hello 2, list 2, item 3, result 4"
-                        }
-                    ]
-                },
-                {
-                    "title": "Hello 2, list 2, item 4",
-                    "result": [
-                        {
-                            "title": "Hello 2, list 2, item 4, result 1"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "title": "Hello 3, list 2",
-            "item": [
-                {
-                    "title": "Hello 3, list 2, item",
-                    "result": [
-                        {
-                            "title": "Hello 3, list 2, item, result 1"
-                        },
-                        {
-                            "title": "Hello 3, list 2, item, result 2"
-                        },
-                        {
-                            "title": "Hello 3, list 2, item, result 3"
-                        },
-                        {
-                            "title": "Hello 3, list 2, item, result 4"
-                        }
-                    ]
-                },
-                {
-                    "title": "Hello 3, list 3, item 2",
-                    "result": [
-                        {
-                            "title": "Hello 3, list 2, item 2, result 1"
-                        },
-                        {
-                            "title": "Hello 3, list 2, item 2, result 2"
-                        }
-                    ]
-                }
-            ]
-        }
-    ],  
-
-    "list3": [
-        {
-            "title": "Hello, list 3",
-            "item": [
-                {
-                    "title": "Hello, list 3, item",
-                    "result": [
-                        {
-                            "title": "Hello, list 3, item, result"
-                        },
-                        {
-                            "title": "Hello 2, list 3, item, result 2"
-                        }
-                    ]
-                },
-                {
-                    "title": "Hello 2, list 3, item 2",
-                    "result": [
-                        {
-                            "title": "Hello, list 3, item, result"
-                        },
-                        {
-                            "title": "Hello 2, list 3, item, result 2"
-                        },
-                        {
-                            "title": "Hello, list 3, item, result 3"
-                        },
-                        {
-                            "title": "Hello 2, list 3, item, result 4"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]   
+    ]
 }

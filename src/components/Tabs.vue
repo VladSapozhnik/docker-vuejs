@@ -39,7 +39,6 @@ export default {
   },
   computed: {},
   methods: {
-    tabRoll: function () {},
   },
 };
 </script>

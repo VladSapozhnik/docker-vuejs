@@ -2,12 +2,14 @@
     "list": [
         {
             "title": "Услуги",
+            "id": 1,
             "href": "service",
             "item": [
                 {
                     "title": "Услуги, услуга доставки, item 1",
                     "href": "service-item",
-                    "result": [
+                    "id": 5,
+                    "item": [
                         {
                             "title": "Услуги, результат один"
                         },
@@ -22,7 +24,8 @@
                 {
                     "title": "Услуги, услуга вывоза, item 2",
                     "href": "service-item2",
-                    "result": [
+                    "id": 6,
+                    "item": [
                         {
                             "title": "Услуги, результат один 2.1"
                         },
@@ -37,7 +40,8 @@
                 {
                     "title": "Услуги, услуга хз, item 3",
                     "href": "service-item3",
-                    "result": [
+                    "id": 7,
+                    "item": [
                         {
                             "title": "Услуги, результат один 3.1"
                         },
@@ -53,12 +57,14 @@
         },
         {
             "title": "Новости",
+            "id": 2,
             "href": "news",
             "item": [
                 {
                     "title": "Hello, list 2, item 1",
                     "href": "news-item1",
-                    "result": [
+                    "id": 8,
+                    "item": [
                         {
                             "title": "Новости, результат один 1"
                         },
@@ -76,7 +82,8 @@
                 {
                     "title": "Hello 2, list 2, item 2",
                     "href": "news-item2",
-                    "result": [
+                    "id": 9,
+                    "item": [
                         {
                             "title": "Новости, результат один 2.1"
                         },
@@ -95,12 +102,14 @@
         },
         {
             "title": "Обучение",
+            "id": 3,
             "href": "training",
             "item": [
                 {
                     "title": "Hello 3, list 1, item 1",
                     "href": "training-item1",
-                    "result": [
+                    "id": 10,
+                    "item": [
                         {
                             "title": "Обучение, результат один 1 "
                         },
@@ -118,7 +127,8 @@
                 {
                     "title": "Hello 3, list 1, item 2",
                     "href": "training-item2",
-                    "result": [
+                    "id": 11,
+                    "item": [
                         {
                             "title": "Обучение, результат один 2.1 "
                         }
@@ -127,7 +137,8 @@
                 {
                     "title": "Hello 3, list 1, item 3",
                     "href": "training-item3",
-                    "result": [
+                    "id": 12,
+                    "item": [
                         {
                             "title": "Обучение, результат один 3.1"
                         },
@@ -142,7 +153,8 @@
                 {
                     "title": "Hello 3, list 1, item 4",
                     "href": "training-item4",
-                    "result": [
+                    "id": 13,
+                    "item": [
                         {
                             "title": "Обучение, результат один 4.1"
                         },
@@ -155,12 +167,14 @@
         },
         {
             "title": "Контакты",
+            "id": 4,
             "href": "contacts",
             "item": [
                 {
                     "title": "Hello 3, list 1, item 1",
                     "href": "contacts-item1",
-                    "result": [
+                    "id": 14,
+                    "item": [
                         {
                             "title": "Контакты, результат один 1 "
                         },
@@ -172,7 +186,8 @@
                 {
                     "title": "Hello 3, list 1, item 2",
                     "href": "contacts-item2",
-                    "result": [
+                    "id": 15,
+                    "item": [
                         {
                             "title": "Контакты, результат один 2.1 "
                         },
@@ -187,7 +202,8 @@
                 {
                     "title": "Hello 3, list 1, item 3",
                     "href": "contacts-item3",
-                    "result": [
+                    "id": 16,
+                    "item": [
                         {
                             "title": "Контакты, результат один 3.1"
                         },
@@ -202,7 +218,8 @@
                 {
                     "title": "Hello 3, list 1, item 4",
                     "href": "contacts-item4",
-                    "result": [
+                    "id": 17,
+                    "item": [
                         {
                             "title": "Контакты, результат один 4.1"
                         },
@@ -223,7 +240,8 @@
                 {
                     "title": "Hello 3, list 1, item 3",
                     "href": "contacts-item5",
-                    "result": [
+                    "id": 18,
+                    "item": [
                         {
                             "title": "Контакты, результат один 5.1"
                         },

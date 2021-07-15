@@ -1,66 +1,75 @@
 <template>
-  <div class="popup" >
-    <div class="container">
-        <div class="menu" v-if="!pending">
-            <ul>
-                <div v-if="hrefItem == ''" class="menu-title">Главная</div>
-                <li v-for="menu in menuData.list" :key="menu.id"> 
-                    <a v-if="hrefItem == ''" @click="nextStep(menu.href)">{{menu.title}}</a>
-                    <a v-if="hrefItem != '' && menu.href == hrefItem" @click="hrefItem = ''" class="step-back">Назад</a>
-                    <ul>
-                        <li v-for="item in menu.item" :key="item.id">
-                            <a v-if="menu.href == hrefItem" @click="nextStep(item.href)">{{item.title}}</a>
-                            <a v-if="hrefItem != '' && item.href == hrefItem" @click="backStep(menu.href)" class="step-back">{{menu.stepBack}}</a>
-                            <ul v-if="item.href == hrefItem">
-                                <li v-for="result in item.result" :key="result.id">
-                                    <a>{{result.title}}</a>
+    <div class="popup" >
+        <div class="container">
+            <div class="menu" v-if="!pending">
+                <div class="menu-title">Главная</div>
+                <ul class="menu__inner">
+                    <li @click="$event.target.classList.toggle('active')" v-for="menu in menuData.list" :key="menu.id"> 
+                        <div class="menu__item"><a :href="menu.href">{{menu.title}}</a>
+                            <div class="arrow"></div>
+                            <ul>
+                                <li v-for="item in menu.item" class="menu__item-list" @click="$event.target.classList.toggle('open')" :key="item.id">
+                                    <div class="menu__item-result"><a :href="item.href">{{item.title}}</a>
+                                        <div class="arrow-item"></div>
+                                        <ul class="menu__item-result--list">
+                                            <li v-for="item in item.item" :key="item.id">
+                                                <a>{{item.title}}</a>
+                                            </li>
+                                        </ul>
+                                    </div> 
                                 </li>
                             </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <slot></slot>
+            <div class="popup__head">Услуги</div>    
+            <ul class="popup__head" v-for="itemTest in testData" :key="itemTest.id">
+                <li>{{itemTest.title}}
+                    <ul v-for="itemTest in itemTest.item" :key="itemTest.id">
+                        <li>
+                            <div @click="clickTest(itemTest)">нажать</div>{{itemTest.title}}
                         </li>
                     </ul>
                 </li>
             </ul>
+            <div class="popup__head">Обучение</div>
+            <div class="popup__head">Соц.проект</div>
+            <div class="popup__head">О нас</div>
+            <div class="popup__head">Нормативная база</div>
+            <div class="popup__head">Вакансии</div>
+            <div class="popup__head">Контакты</div>
         </div>
-        <slot></slot>
-        <div class="popup__head">Услуги</div>    
-        <div class="popup__head">Новости</div>
-        <div class="popup__head">Обучение</div>
-        <div class="popup__head">Соц.проект</div>
-        <div class="popup__head">О нас</div>
-        <div class="popup__head">Нормативная база</div>
-        <div class="popup__head">Вакансии</div>
-        <div class="popup__head">Контакты</div>
     </div>
-  </div>
 </template>
 <script>
 
 export default {
-  name: "Popup",
-  props: {
-    msg: String,
-  },
-  data: function () {
-    return {
+    name: "Popup",
+    data: function () {
+      return {
         pending: true,
         menuData: {},
-        hrefItem: ''
-    };
-  },
-  created: function () {
-    this.axios.get("./static/menu.json").then((response) => {
-        this.menuData = response.data;
-        this.pending = false;
-    });
-  },
-  methods: {
-    nextStep: function (next) {
-        this.hrefItem = next
+        testData: []
+      };
     },
-    backStep: function (back) {
-        this.hrefItem = back 
+    created: function () {
+        this.axios.get("./static/menu.json").then((response) => {
+            this.menuData = response.data;
+            this.pending = false;
+        });
+        this.axios.get("./static/menu-copy.json").then((response) => {
+            this.testData = response.data;
+            this.pending = false;
+        });
+    },
+    methods: {
+        clickTest: function (e) {
+            console.log(e);
+            console.log(e.title)
+        }
     }
-  }
 };
 </script>
 <style scoped lang="scss">
@@ -78,6 +87,7 @@ export default {
         list-style-type: none;
         padding: 0;
         margin: 0;
+        width: 100%;
     }
     li {
         padding: 0;
@@ -93,6 +103,7 @@ export default {
         padding: 10px 0;
         display: flex;
         align-items: center;
+        width: max-content;
     }
 
     .menu-title {
@@ -102,27 +113,52 @@ export default {
         width: 140px;
         margin-bottom: 5px;
     }
+}
 
-    a.step-back {
-        border: 1px solid green;
-        padding: 5px 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 140px;
-        margin-bottom: 5px;
-        &:hover {
-            background-color: green;
-            color: #fff;
-        }
+.menu__item {
+    position: relative;
+}
+
+.arrow,
+.arrow-item {
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-image: url(/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    right: 30px;
+    top: 15px;
+}
+
+.menu__item-list,
+.menu__item-result--list {
+    display: none;
+}
+
+.menu__item-result {
+    position: relative;
+}
+
+.menu__item.active {
+    .menu__item-list {
+        display: block;
     }
 
-    .menu {
-        width: 50%;
-        li a {
-            border-bottom: 1px solid green;
-            padding-left: 10px;
-        }
+    .arrow {
+        transform: rotate(90deg);
+    }
+}
+
+.menu__item-result.active {
+    .menu__item-result--list {
+        display: block;
+    }
+
+    .arrow-item {
+        transform: rotate(90deg);
     }
 }
 </style>

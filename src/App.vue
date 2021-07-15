@@ -40,6 +40,7 @@ export default {
 .container {
   max-width: 920px;
   margin: 30px auto 0;
+  padding: 0 15px;
 }
 body {
   padding: 0;

@@ -4,16 +4,16 @@
             <div class="menu" v-if="!pending">
                 <div class="menu-title">Главная</div>
                 <ul class="menu__inner">
-                    <li @click="$event.target.classList.toggle('active')" v-for="menu in menuData.list" :key="menu.id"> 
-                        <div class="menu__item"><a :href="menu.href">{{menu.title}}</a>
+                    <li @click="$event.target.classList.toggle('active')" v-for="item in menuData.list" :key="item.id"> 
+                        <div class="menu__item"><a :href="item.href">{{item.title}}</a>
                             <div class="arrow"></div>
                             <ul>
-                                <li v-for="item in menu.item" class="menu__item-list" @click="$event.target.classList.toggle('open')" :key="item.id">
+                                <li v-for="item in item.item" class="menu__item-list" @click="$event.target.classList.toggle('open')" :key="item.id">
                                     <div class="menu__item-result"><a :href="item.href">{{item.title}}</a>
                                         <div class="arrow-item"></div>
                                         <ul class="menu__item-result--list">
                                             <li v-for="item in item.item" :key="item.id">
-                                                <a>{{item.title}}</a>
+                                                <a :href="item.href">{{item.title}}</a>
                                             </li>
                                         </ul>
                                     </div> 
@@ -25,11 +25,11 @@
             </div>
             <slot></slot>
             <div class="popup__head">Услуги</div>    
-            <ul class="popup__head" v-for="itemTest in testData" :key="itemTest.id">
-                <li>{{itemTest.title}}
-                    <ul v-for="itemTest in itemTest.item" :key="itemTest.id">
+            <ul class="popup__head" v-for="item in item" :key="item.id">
+                <li :id="item.id" @click="currentIndex = item.id" :class="{someClass: item.id===currentIndex}" class="head">{{item.title}}
+                    <ul class="head-list" :id="item.id" @click="currentIndexItem = item.id" :class="{someClass: item.id===currentIndexItem}" v-for="item in item.item" :key="item.id">
                         <li>
-                            <div @click="clickTest(itemTest)">нажать</div>{{itemTest.title}}
+                            <div>-->{{item.title}}</div>
                         </li>
                     </ul>
                 </li>
@@ -51,7 +51,10 @@ export default {
       return {
         pending: true,
         menuData: {},
-        testData: []
+        item: [],
+        activeItem: null,
+        currentIndex: '',
+        currentIndexItem: ''
       };
     },
     created: function () {
@@ -60,15 +63,15 @@ export default {
             this.pending = false;
         });
         this.axios.get("./static/menu-copy.json").then((response) => {
-            this.testData = response.data;
+            this.item = response.data;
             this.pending = false;
         });
     },
     methods: {
-        clickTest: function (e) {
+        popupShow: function (e) {
             console.log(e);
             console.log(e.title)
-        }
+        },
     }
 };
 </script>
@@ -160,5 +163,20 @@ export default {
     .arrow-item {
         transform: rotate(90deg);
     }
+}
+
+.head-list {
+    display: none;
+}
+
+.head.someClass {
+    color: green;
+
+    .head-list{
+        display: block;
+    }
+}
+.head-list.someClass {
+    color: #000;
 }
 </style>

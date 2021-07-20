@@ -24,12 +24,27 @@
                 </ul>
             </div>
             <slot></slot>
-            <div class="popup__head">Услуги</div>    
+            <div class="popup__head">Услуги</div>   
+            <div class="menu-title"><div v-if="currentIndex == 0">Главная</div><div @click="currentIndex = 0" v-if="currentIndex > 0">На главную</div></div> 
             <ul class="popup__head" v-for="item in item" :key="item.id">
-                <li :id="item.id" @click="currentIndex = item.id" :class="{someClass: item.id===currentIndex}" class="head">{{item.title}}
-                    <ul class="head-list" :id="item.id" @click="currentIndexItem = item.id" :class="{someClass: item.id===currentIndexItem}" v-for="item in item.item" :key="item.id">
-                        <li>
-                            <div>-->{{item.title}}</div>
+                <li :id="item.id" :class="{someClass: item.id===currentIndex}" class="head">
+                    <div @click="currentIndex = item.id">
+                        <a :href="item.href">{{item.title}}</a>
+                        <div class="arrow"></div>
+                    </div>
+                    <ul class="head-list">
+                        <li :id="item.id" :class="{someClass: item.id===currentIndexItem}" v-for="item in item.item" :key="item.id">
+                            <div @click="currentIndexItem = item.id">
+                                <a :href="item.href">-->{{item.title}}</a>
+                                <div class="arrow"></div>
+                            </div>
+                            <ul class="head-list" v-if="item.id===currentIndexItem">
+                                <li :id="item.id" :class="{someClass: item.id===currentIndexItem}" v-for="item in item.item" :key="item.id">
+                                    <div>
+                                        <a :href="item.href">-->{{item.title}}</a>
+                                    </div>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
@@ -98,6 +113,7 @@ export default {
         text-align: left;
         font-size: 15px;
         cursor: pointer;
+        position: relative;
     }
     a {
         color: #000;
@@ -176,6 +192,39 @@ export default {
         display: block;
     }
 }
+
+li {
+    .arrow {
+        transform: rotate(0deg);
+    }
+}
+
+.head-list {
+    display: none;
+}
+
+li.someClass {
+    .arrow {
+        transform: rotate(90deg);
+    }
+
+    li {
+        .arrow {
+            transform: rotate(0deg);
+        }
+    }
+
+    li.someClass {
+        .arrow {
+            transform: rotate(90deg);
+        }
+    }
+
+    .head-list {
+        display: block;
+    }
+}
+
 .head-list.someClass {
     color: #000;
 }
